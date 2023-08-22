@@ -3,9 +3,10 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Project;
 use Illuminate\Http\Request;
 
-class Project extends Controller
+class ProjectController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,6 +14,8 @@ class Project extends Controller
     public function index()
     {
         //
+        $projects = Project::paginate(15);
+        return view('admin.projects.index', compact('projects'));
     }
 
     /**
@@ -37,6 +40,7 @@ class Project extends Controller
     public function show(string $id)
     {
         //
+        return view('admin.projects.show', compact('projects'));
     }
 
     /**
