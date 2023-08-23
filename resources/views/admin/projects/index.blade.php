@@ -34,15 +34,20 @@
                             {{ $project->link}}
                         </td>
                         <td>
-                            <a href="{{ route('admin.projects.show', $project->id) }}" class="btn btn-sm btn-success">
+                            <a href="{{ route('admin.projects.show', $project) }}" class="btn btn-sm btn-success">
                                 View
                             </a>
-                            <a href="{{ route('admin.projects.edit', $project->id) }}" class="btn btn-sm btn-warning">
+                            <a href="{{ route('admin.projects.edit', $project) }}" class="btn btn-sm btn-warning">
                                 Edit
                             </a>
-                            <a href="" class="btn btn-sm btn-danger">
-                                Delete
-                            </a>
+                            <form class="d-inline-block" action="{{ route('admin.projects.destroy', $project) }}" method="POST">
+                                @csrf
+                                @method('DELETE')
+
+                                <button type="submit" class="btn btn-sm btn-danger">
+                                    Delete
+                                </button>
+                            </form>
                         </td>
                     </tr>
                     @endforeach
