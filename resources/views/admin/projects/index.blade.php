@@ -34,10 +34,10 @@
                             {{ $project->link}}
                         </td>
                         <td>
-                            <a href="" class="btn btn-sm btn-success">
+                            <a href="{{ route('admin.projects.show', $project->id) }}" class="btn btn-sm btn-success">
                                 View
                             </a>
-                            <a href="" class="btn btn-sm btn-warning">
+                            <a href="{{ route('admin.projects.edit', $project->id) }}" class="btn btn-sm btn-warning">
                                 Edit
                             </a>
                             <a href="" class="btn btn-sm btn-danger">

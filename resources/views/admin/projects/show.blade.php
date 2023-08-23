@@ -19,10 +19,7 @@
                         {{ $project->link}}
                     </a>
                     <p class="mt-3">
-                        <a href="" class="btn btn-sm btn-success">
-                            View
-                        </a>
-                        <a href="" class="btn btn-sm btn-warning">
+                        <a href="{{ route('admin.projects.edit', $project->id) }}" class="btn btn-sm btn-warning">
                             Edit
                         </a>
                         <a href="" class="btn btn-sm btn-danger">
