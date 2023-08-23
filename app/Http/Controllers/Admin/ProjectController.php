@@ -14,8 +14,12 @@ class ProjectController extends Controller
     public function index()
     {
         //
+<<<<<<< HEAD
         $projects = Project::paginate(15);
         return view('admin.projects.index', compact('projects'));
+=======
+        return view('admin.project.index');
+>>>>>>> c312264b281d5856e07c5acaa546837173c9d1d3
     }
 
     /**
