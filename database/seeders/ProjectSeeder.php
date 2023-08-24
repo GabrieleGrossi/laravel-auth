@@ -16,7 +16,7 @@ class ProjectSeeder extends Seeder
         //
         for ($i=0; $i<70; $i++){
             $newProject = new Project();
-            $newProject->name =ucfirst($faker->unique()->word(5, true));
+            $newProject->name =ucfirst($faker->unique()->words(5, true));
             $newProject->goal =ucfirst($faker->paragraph());
             $newProject->link =$faker->url();
             $newProject->save();
