@@ -4,7 +4,7 @@
 <div class="container" id="posts-container">
     <div class="row justify-content-center">
         <div class="col-12">
-            <form action="{{route('admin.projects.update', $project->id) }}" method="POST">
+            <form action="{{route('admin.projects.update', $project->id) }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 @method('PUT')
 
@@ -47,7 +47,7 @@
                     <label for="image" class="form-label">
                         Image
                     </label>
-                    <input type="text" class="form-control" id="image" placeholder="https://ginetto-va-in-campagna-col-cappello.jpg" name="image">
+                    <input type="file" name="image" id="image" class="form-control" placeholder="Upload your image" value="{{ old('image', '') }}">
                 </div>
 
                 <div class="mb-3">

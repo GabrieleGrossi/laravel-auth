@@ -7,6 +7,7 @@ use App\Models\Project;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Illuminate\Validation\Rule;
+use Illuminate\Support\Facades\Storage;
 
 class ProjectController extends Controller
 {
@@ -38,9 +39,14 @@ class ProjectController extends Controller
         $data = $request->validate([
             'name' => ['required', 'unique:projects','min:3', 'max:255'],
             'goal' => ['required', 'min:10'],
-            'link' => ['min:20']
+            'link' => ['min:20'],
+            'image' => ['image'],
         ]);
-        
+        if ($request->hasFile('image')){
+            $img_path = Storage::put('uploads/projects', $request['image']);
+            $data['image'] = $img_path;
+        }
+
         $newProject = Project::create($data);
         return redirect()->route('admin.projects.index');
     }
@@ -75,6 +81,12 @@ class ProjectController extends Controller
             'link' => ['min:20'],
             'image'=> ['image'],
         ]);
+        
+        if ($request->hasFile('image')){
+            Storage::delete($project->image);
+            $img_path = Storage::put('uploads/projects', $request['image']);
+            $data['image'] = $img_path;
+        }
 
         $project->update($data);
 
@@ -88,6 +100,7 @@ class ProjectController extends Controller
     {
         //
         $project->delete();
+        //Storage::delete($project->image);
         return redirect()->route('admin.projects.index');
 
         

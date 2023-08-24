@@ -20,6 +20,11 @@
                     </a>
                     <div>
                         <img src="{{$project->image}}" alt="{{$project->name}}" class="mt-3">
+                        @if (str_starts_with($project->image, 'http' ))
+                            <img src="{{ $project->image }}" alt="{{ $project->title }}">
+                        @else
+                            <img src="{{ asset('storage/' . $project->image) }}" alt="{{ $project->title }}">
+                        @endif
                     </div>
                     <p class="mt-3">
                         <a href="{{ route('admin.projects.edit', $project->id) }}" class="btn btn-sm btn-warning">

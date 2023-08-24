@@ -55,7 +55,7 @@
             </table>
             {{ $projects->links() }}
 
-            <a href="{{route('admin.projects.create', $project)}}" class="btn btn-sm btn-success">
+            <a href="{{route('admin.projects.create', $projects)}}" class="btn btn-sm btn-success">
                 Add new projects
             </a>
         </div>
