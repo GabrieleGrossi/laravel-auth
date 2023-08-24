@@ -19,11 +19,10 @@
                         {{ $project->link}}
                     </a>
                     <div>
-                        <img src="{{$project->image}}" alt="{{$project->name}}" class="mt-3">
                         @if (str_starts_with($project->image, 'http' ))
-                            <img src="{{ $project->image }}" alt="{{ $project->title }}">
+                            <img src="{{ $project->image }}" alt="{{ $project->title }}" class="mt-3">
                         @else
-                            <img src="{{ asset('storage/' . $project->image) }}" alt="{{ $project->title }}">
+                            <img src="{{ asset('storage/' . $project->image) }}" alt="{{ $project->title }}" class="mt-3">
                         @endif
                     </div>
                     <p class="mt-3">
