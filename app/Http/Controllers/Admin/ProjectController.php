@@ -73,6 +73,7 @@ class ProjectController extends Controller
             'name' => ['required', 'min:3', 'max:255', Rule::unique('projects')->ignore($project->id)],
             'goal' => ['required', 'min:10'],
             'link' => ['min:20'],
+            'image'=> ['image'],
         ]);
 
         $project->update($data);

@@ -18,6 +18,9 @@
                     <a href="#" class="btn btn-primary">
                         {{ $project->link}}
                     </a>
+                    <div>
+                        <img src="{{$project->image}}" alt="{{$project->name}}" class="mt-3">
+                    </div>
                     <p class="mt-3">
                         <a href="{{ route('admin.projects.edit', $project->id) }}" class="btn btn-sm btn-warning">
                             Edit

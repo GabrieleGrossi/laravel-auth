@@ -19,6 +19,7 @@ class ProjectSeeder extends Seeder
             $newProject->name =ucfirst($faker->unique()->words(5, true));
             $newProject->goal =ucfirst($faker->paragraph());
             $newProject->link =$faker->url();
+            $newProject->image = $faker->imageUrl(360, 360, 'animals', true, 'cats');
             $newProject->save();
         }
     }

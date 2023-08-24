@@ -38,6 +38,16 @@
                     </textarea>
                 </div>
 
+                @error('image')
+                    <div class="alert alert-danger">{{ $message }}</div>
+                @enderror
+                <div class="mb-5">
+                    <label for="image" class="form-label">
+                        Image
+                    </label>
+                    <input type="text" class="form-control" id="image" placeholder="https://ginetto-va-in-campagna-col-cappello.jpg" name="image">
+                </div>
+
                 <div class="mb-3">
                     <button type="submit" class="me-3">
                         Add new project
