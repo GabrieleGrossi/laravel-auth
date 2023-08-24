@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('name')->unique();
             $table->text('goal');
             $table->text('link');
+            $table->text('image');
             $table->timestamps();
         });
     }
