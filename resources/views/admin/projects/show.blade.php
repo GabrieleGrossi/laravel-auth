@@ -22,6 +22,9 @@
                         <a href="{{ route('admin.projects.edit', $project->id) }}" class="btn btn-sm btn-warning">
                             Edit
                         </a>
+                        <a href="{{ route('admin.projects.index')}}" class="btn btn-sm btn-success">
+                            Click here to back home
+                        </a>
                         <form class="d-inline-block" action="{{ route('admin.projects.destroy', $project) }}" method="POST">
                             @csrf
                             @method('DELETE')

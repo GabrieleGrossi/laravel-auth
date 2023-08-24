@@ -41,12 +41,15 @@
                 </div>
 
                 <div class="mb-3">
-                    <button type="submit" class="me-3">
+                    <button type="submit" class="btn btn-sm btn-warning">
                         Update
                     </button>
-                    <button type="reset">
+                    <button type="reset" class="btn btn-sm btn-danger">
                         Reset
                     </button>
+                    <a href="{{ route('admin.projects.index')}}" class="btn btn-sm btn-success">
+                        Click here to back home
+                    </a>
                 </div>
 
             </form>
